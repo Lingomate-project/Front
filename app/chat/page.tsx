@@ -98,17 +98,9 @@ export default function ChatScreen() {
 
       if (!response.ok) throw new Error('Failed to get response');
 
-      // React Native에서의 스트리밍 처리는 웹과 약간 다를 수 있습니다.
-      // 간단한 구현을 위해 여기서는 텍스트 스트림 로직을 그대로 가져왔으나,
-      // 'text-encoding-polyfill'이 없으면 에러가 날 수 있습니다.
-      
-      // (만약 스트리밍이 너무 복잡하다면 일반 fetch await response.json()으로 변경 고려)
-      
-      // const reader = response.body?.getReader(); // RN fetch는 getReader 지원이 미비할 수 있음
-      // 대안: react-native-sse 또는 react-native-fetch-api 라이브러리 사용 권장
       
       // --- 임시 응답 시뮬레이션 (백엔드 연동 전 테스트용) ---
-      // 실제 구현시에는 위 fetch 로직을 RN 환경에 맞는 라이브러리로 교체해야 합니다.
+
       setTimeout(() => {
         const assistantMessage: Message = {
           id: (Date.now() + 1).toString(),
